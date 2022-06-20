@@ -21,7 +21,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Home from "./src/screens/home";
+import Home from "./src/screens/Home";
 import FinalFoodListScreen from "./src/screens/FinalFoodListScreen";
 
 const Stack = createNativeStackNavigator();
