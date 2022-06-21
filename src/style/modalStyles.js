@@ -17,6 +17,12 @@ export const modalStyles = StyleSheet.create({
       // borderTopRightRadius: 30,
       // backgroundColor: "white",
     },
+    placeHolderContainerSubContainer : {
+      width : '100%',
+      height : Dimensions.get("screen").height * 0.4,
+      // borderColor : 'black',
+      // borderWidth : 1,
+    },
     mainContainer: {
       display: "flex",
       // alignItems: "center",

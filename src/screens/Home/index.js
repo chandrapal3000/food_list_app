@@ -37,6 +37,7 @@ export default function(props){
     const FOODLIST_IN_ASYNC = "foodList";
     const UPDATE_FOOD_BUTTON_TEXT = "Update Food";
   
+    const [statusBarColor, setStatusBarColor] = useState("#fff");
     const [foodList, setFoodList] = useState([]);
     const [modalOpen, setmodalOpen] = useState(false);
     const [foodName, setFoodName] = useState("");
@@ -59,6 +60,10 @@ export default function(props){
       console.log("Food list : ", foodList);
       setObjectToAsync(foodList);
     }, [foodList]);
+
+    useEffect(()=>{
+      modalOpen ? setStatusBarColor("rgba(0,0,0,.3)") : setStatusBarColor("#fff");
+    },[modalOpen])
   
     const setObjectToAsync = (object) => {
       AsyncStorage.setItem(FOODLIST_IN_ASYNC, JSON.stringify(object), (err) => {
@@ -136,6 +141,9 @@ export default function(props){
     ];
   
     return (
+      <>
+        <StatusBar style="auto" backgroundColor={statusBarColor} translucent={false} />
+      
       <View style={styles.container}>
         {/* Heading */}
         <View style={styles.heading}>
@@ -214,8 +222,9 @@ export default function(props){
         >
           <View style={modalStyles.fullContainer}>
             {/* Half screen */}
+
+            <View style={modalStyles.placeHolderContainer}><TouchableOpacity onPress={()=>setmodalOpen(false)}><View style={modalStyles.placeHolderContainerSubContainer}></View></TouchableOpacity></View>
   
-            <View style={modalStyles.placeHolderContainer}></View>
             <View style={modalStyles.mainContainer}>
               {/* smallHorizontalBar */}
               <View style={modalStyles.smallHorizontalBarContainer}>
@@ -307,7 +316,7 @@ export default function(props){
           </View>
         </Modal>
   
-        <StatusBar style="auto" />
       </View>
+      </>
     );
   };
