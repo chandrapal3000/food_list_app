@@ -1,9 +1,20 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet ,Dimensions} from "react-native";
 export const styles = StyleSheet.create({
+  container : {
+    backgroundColor : "#fff",
+    height : Dimensions.get('window').height,
+    margin : 0,
+    // borderColor : '#000',
+    // borderWidth : 1,
+  },
+  // topHeaderParentContainer : {
+  //   minHeight: Dimensions.get('window').height*.1,
+  // },
   heading: {
-    marginTop: 100,
+    // marginTop: 100,
     display: "flex",
     alignItems: "center",
+    maxHeight : Dimensions.get('window').height*.1,
   },
   headingText: {
     fontWeight: "bold",
@@ -14,6 +25,7 @@ export const styles = StyleSheet.create({
     opacity: 0.7,
     borderWidth: 0,
     height: 1,
+    maxHeight : Dimensions.get('window').height*.05,
     // marginLeft: 30,
     // marginRight: 30,
     marginTop: 10,
@@ -23,19 +35,22 @@ export const styles = StyleSheet.create({
     elevation: 10,
   },
   foodItemsContainer: {
-    maxHeight: 400,
+    // maxHeight: 400,
+    maxHeight : Dimensions.get('window').height*.65,
   },
   dottedHorizontalLine: {
     borderColor: "#F3E9E5",
     borderStyle: "dotted",
     borderTopWidth: 2,
     height: 5,
+    maxHeight : Dimensions.get('window').height*.05,
     marginLeft: 30,
     marginRight: 30,
     marginTop: 10,
     marginBottom: 10,
   },
   addFoodItemContainer: {
+    maxHeight : Dimensions.get('window').height*.15,
     flexDirection: "row",
     // justifyContent : 'center',
     alignItems: "center",
@@ -69,6 +84,8 @@ export const styles = StyleSheet.create({
     fontSize: 15,
   },
   finalFoodListContainerButton: {
+    maxHeight : Dimensions.get('window').height*.15,
+
     borderColor: "#D3D3D3",
     borderWidth: 1,
     borderRadius: 10,
